@@ -1,0 +1,57 @@
+url: 
+mspdir: 
+tls:
+  certfiles:
+  client:
+    certfile:
+    keyfile:
+csr:
+  cn: 
+  keyrequest:
+    algo: ecdsa
+    size: 256
+  serialnumber:
+  names:
+    - C:
+      ST:
+      L:
+      O:
+      OU:
+  hosts:
+    #- localhost
+id:
+  name:
+  type:
+  affiliation:
+  maxenrollments: 0
+  attributes:
+   # - name:
+   #   value:
+
+#  profile - Name of the signing profile to use in issuing the certificate
+#  label - Label to use in HSM operations
+enrollment:
+  profile:
+  label:
+
+# Name of the CA to connect to within the fabric-ca server
+caname:
+
+# BCCSP (BlockChain Crypto Service Provider) section allows to select which
+bccsp:
+    # Keep capital letters for 'PKCS11', do not use 'pkcs11'
+    default: PKCS11
+    pkcs11:
+        Library: /usr/lib64/libsofthsm2.so
+        Pin:
+        Label:
+        hash: SHA2
+        security: 256
+        Immutable: false
+    sw:
+        hash: SHA2
+        security: 256
+        filekeystore:
+            # The directory used for the software file-based keystore
+            #keystore: msp/keystore
+            keystore:
